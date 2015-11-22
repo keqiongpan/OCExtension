@@ -150,11 +150,7 @@ int suspend_debuger_catching()
     suspend_mask &= ~EXC_MASK_CORPSE_NOTIFY;
     suspend_mask &= ~EXC_MASK_BREAKPOINT;
 
-    retcode = task_set_exception_ports(mach_task_self(),
-                                       suspend_mask,
-                                       0,
-                                       EXCEPTION_DEFAULT,
-                                       THREAD_STATE_NONE);
+    retcode = task_set_exception_ports(mach_task_self(), suspend_mask, 0, 0, 0);
 
     return (KERN_SUCCESS == retcode);
 }
