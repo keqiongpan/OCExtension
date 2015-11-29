@@ -8,12 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		1B0F84BF1C0A3D8800D2C37D /* OCExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B0F84BE1C0A3D8800D2C37D /* OCExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B44FD4D1C0B84E0009E2208 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B44FD4B1C0B84E0009E2208 /* memory.c */; };
+		1B44FD4E1C0B84E0009E2208 /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B44FD4C1C0B84E0009E2208 /* memory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B9F2E161C0A413000F00B88 /* PublicHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B9F2E151C0A413000F00B88 /* PublicHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B9F2E191C0A41B000F00B88 /* exception.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F2E171C0A41B000F00B88 /* exception.c */; };
+		1B9F2E1A1C0A41B000F00B88 /* exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B9F2E181C0A41B000F00B88 /* exception.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B9F2E1D1C0A532F00F00B88 /* debugger.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F2E1B1C0A532F00F00B88 /* debugger.c */; };
+		1B9F2E1E1C0A532F00F00B88 /* debugger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B9F2E1C1C0A532F00F00B88 /* debugger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B9F2E251C0A696900F00B88 /* syssignal.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F2E231C0A696900F00B88 /* syssignal.c */; };
+		1B9F2E261C0A696900F00B88 /* syssignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B9F2E241C0A696900F00B88 /* syssignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B0F84BB1C0A3D8800D2C37D /* OCExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0F84BE1C0A3D8800D2C37D /* OCExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCExtension.h; sourceTree = "<group>"; };
-		1B0F84C01C0A3D8800D2C37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B0F84C01C0A3D8800D2C37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		1B44FD4B1C0B84E0009E2208 /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		1B44FD4C1C0B84E0009E2208 /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		1B9F2E151C0A413000F00B88 /* PublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
+		1B9F2E171C0A41B000F00B88 /* exception.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exception.c; sourceTree = "<group>"; };
+		1B9F2E181C0A41B000F00B88 /* exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exception.h; sourceTree = "<group>"; };
+		1B9F2E1B1C0A532F00F00B88 /* debugger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = debugger.c; sourceTree = "<group>"; };
+		1B9F2E1C1C0A532F00F00B88 /* debugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debugger.h; sourceTree = "<group>"; };
+		1B9F2E231C0A696900F00B88 /* syssignal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = syssignal.c; sourceTree = "<group>"; };
+		1B9F2E241C0A696900F00B88 /* syssignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syssignal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +64,35 @@
 		1B0F84BD1C0A3D8800D2C37D /* OCExtension */ = {
 			isa = PBXGroup;
 			children = (
+				1B9F2E141C0A3FCD00F00B88 /* System */,
+				1B9F2E131C0A3FC600F00B88 /* Supporting Files */,
 				1B0F84BE1C0A3D8800D2C37D /* OCExtension.h */,
-				1B0F84C01C0A3D8800D2C37D /* Info.plist */,
 			);
 			path = OCExtension;
+			sourceTree = "<group>";
+		};
+		1B9F2E131C0A3FC600F00B88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B0F84C01C0A3D8800D2C37D /* Info.plist */,
+				1B9F2E151C0A413000F00B88 /* PublicHeader.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B9F2E141C0A3FCD00F00B88 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F2E171C0A41B000F00B88 /* exception.c */,
+				1B9F2E181C0A41B000F00B88 /* exception.h */,
+				1B9F2E1B1C0A532F00F00B88 /* debugger.c */,
+				1B9F2E1C1C0A532F00F00B88 /* debugger.h */,
+				1B9F2E231C0A696900F00B88 /* syssignal.c */,
+				1B9F2E241C0A696900F00B88 /* syssignal.h */,
+				1B44FD4B1C0B84E0009E2208 /* memory.c */,
+				1B44FD4C1C0B84E0009E2208 /* memory.h */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +102,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9F2E161C0A413000F00B88 /* PublicHeader.h in Headers */,
+				1B9F2E1E1C0A532F00F00B88 /* debugger.h in Headers */,
 				1B0F84BF1C0A3D8800D2C37D /* OCExtension.h in Headers */,
+				1B9F2E1A1C0A41B000F00B88 /* exception.h in Headers */,
+				1B9F2E261C0A696900F00B88 /* syssignal.h in Headers */,
+				1B44FD4E1C0B84E0009E2208 /* memory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9F2E1D1C0A532F00F00B88 /* debugger.c in Sources */,
+				1B9F2E191C0A41B000F00B88 /* exception.c in Sources */,
+				1B44FD4D1C0B84E0009E2208 /* memory.c in Sources */,
+				1B9F2E251C0A696900F00B88 /* syssignal.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +327,7 @@
 				1B0F84C51C0A3D8800D2C37D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

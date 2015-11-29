@@ -15,5 +15,7 @@ FOUNDATION_EXPORT double OCExtensionVersionNumber;
 FOUNDATION_EXPORT const unsigned char OCExtensionVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <OCExtension/PublicHeader.h>
-
-
+#include <OCExtension/exception.h>
+#include <OCExtension/debugger.h>
+#include <OCExtension/syssignal.h>
+#include <OCExtension/memory.h>
