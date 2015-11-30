@@ -49,7 +49,7 @@ replace_signal_handler(int signal,
     state->thread = pthread_self();
     state->replacement.sa_sigaction = handler;
     sigemptyset(&state->replacement.sa_mask);
-    sigaddset(&state->replacement.sa_mask, SA_SIGINFO);
+    state->replacement.sa_flags = SA_SIGINFO;
 
     return (0 == sigaction(state->signal,
                            &state->replacement,
@@ -101,7 +101,7 @@ stc_handler(int signal, siginfo_t *info, void *uap)
     pthread_mutex_t *pstc_mutex = get_stc_mutex();
     pthread_t replacing_thread;
     void(*original_handler)(int, siginfo_t *, void *);
-    sigset_t original_sa_mask;
+    int original_flags;
 
     // 进入stc_mutex互斥区并取出当前系统信号对应的stc_states信息，用于判别是系统
     // 信号抛出线程或是其它线程的误入者，误入者需要回调到signal_try_catch过程之
@@ -114,7 +114,7 @@ stc_handler(int signal, siginfo_t *info, void *uap)
     pthread_mutex_lock(pstc_mutex);
     replacing_thread = stc_states[signal].thread;
     original_handler = stc_states[signal].original.sa_sigaction;
-    original_sa_mask = stc_states[signal].original.sa_mask;
+    original_flags = stc_states[signal].original.sa_flags;
     pthread_mutex_unlock(pstc_mutex);
 
     // 如果当前线程与signal_try_catch是同一线程，则说明signal_try_catch的过程中
@@ -128,7 +128,7 @@ stc_handler(int signal, siginfo_t *info, void *uap)
     // 要回调到signal_try_catch过程之前对应的信号处理器。
 
     if (original_handler) {
-        if (sigismember(&original_sa_mask, SA_SIGINFO)) {
+        if (original_flags & SA_SIGINFO) {
             original_handler(signal, info, uap);
         }
         else {
